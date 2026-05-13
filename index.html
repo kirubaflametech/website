@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Under Construction</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      overflow:hidden;
+    }
+
+    .container{
+      width:100%;
+      max-width:700px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:28px;
+      padding:60px 40px;
+      text-align:center;
+      color:#fff;
+      box-shadow:0 20px 60px rgba(0,0,0,0.4);
+      animation:fadeIn 1s ease;
+    }
+
+    .icon{
+      font-size:70px;
+      margin-bottom:20px;
+      animation:float 3s ease-in-out infinite;
+    }
+
+    h1{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    h1 span{
+      color:#f59e0b;
+    }
+
+    p{
+      font-size:18px;
+      color:#e5e7eb;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .progress-box{
+      width:100%;
+      height:14px;
+      background:rgba(255,255,255,0.12);
+      border-radius:50px;
+      overflow:hidden;
+      margin-bottom:15px;
+    }
+
+    .progress{
+      width:75%;
+      height:100%;
+      background:linear-gradient(90deg,#f59e0b,#ffcc70);
+      border-radius:50px;
+      animation:load 3s ease infinite;
+    }
+
+    .percentage{
+      font-size:15px;
+      color:#d1d5db;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 34px;
+      background:#f59e0b;
+      color:#111827;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      background:#fff;
+    }
+
+    .socials{
+      margin-top:35px;
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#fff;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      background:#f59e0b;
+      color:#111827;
+      transform:translateY(-4px);
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+      100%{
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes load{
+      0%{
+        width:40%;
+      }
+      50%{
+        width:75%;
+      }
+      100%{
+        width:40%;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .container{
+        padding:45px 25px;
+      }
+
+      h1{
+        font-size:38px;
+      }
+
+      p{
+        font-size:16px;
+      }
+
+      .icon{
+        font-size:55px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="icon">🚧</div>
+
+    <h1>
+      Website Is
+      <span>Under Construction</span>
+    </h1>
+
+    <p>
+      We’re working hard to launch something amazing and modern.
+      Our new website will be available soon with a better experience.
+    </p>
+
+    <div class="progress-box">
+      <div class="progress"></div>
+    </div>
+
+    <div class="percentage">
+      Launch Progress : 75%
+    </div>
+
+   <a href="https://wa.me/919597665055" class="btn" target="_blank">
+  Chat on WhatsApp
+</a>
+
+    
+
+  </div>
+
+</body>
+</html>
