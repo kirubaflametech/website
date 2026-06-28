@@ -325,24 +325,24 @@
 
   /* ── PRODUCT VIDEOS ── */
   .sub-heading {
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 600;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     color: var(--brand-red);
     text-align: center;
   }
-  .videos-row { display: flex; gap: 24px; }
+  .videos-row { display: flex; gap: 20px; }
   .video-card {
     flex: 1;
     background: var(--bg-card-blue);
     border: 1px solid var(--border-rose);
     border-radius: 4px;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 50px;
     padding: 1px 1px 17px;
   }
   .video-wrap {
@@ -350,7 +350,7 @@
     width: 100%;
     background: var(--dark);
     cursor: pointer;
-    aspect-ratio: 1024 / 576;
+    /* aspect-ratio: 1024 / 576; */
     overflow: hidden;
   }
   .video-wrap video {
@@ -377,12 +377,12 @@
   .video-card span { font-size: 16px; color: var(--dark); }
 
   /* ── GALLERY ── */
-  .gallery-row { display: flex; gap: 16px; }
+  .gallery-row { display: flex; gap: 170px; }
   .gallery-item {
     flex: 1;
-    height: 256px;
+    height: 500px;
     border-radius: 4px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     cursor: pointer;
   }
@@ -404,7 +404,7 @@
     opacity: 0;
     transition: opacity .3s;
   }
-  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  /* .gallery-item:hover .gallery-overlay { opacity: 1; } */
   .gallery-overlay span { font-size: 16px; color: #fff; }
 
   /* ── SUITABLE FOR ── */
@@ -570,6 +570,7 @@
     gap: 48px;
     justify-content: space-between;
   }
+   .footer-logo { width: 100px; height: 100px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
   .footer-col { flex: 1; display: flex; flex-direction: column; gap: 24px; }
   .footer-brand {
     font-family: var(--font-display);
@@ -726,7 +727,7 @@
 
   <div class="hero-image-wrap">
     <div class="hero-image-bg"></div>
-    <img src="Hero_image-bg.jpeg" alt="Kiruba Flame Tech Commercial Biomass Stove" />
+    <img src="image4.jpeg" alt="Kiruba Flame Tech Commercial Biomass Stove" />
   </div>
 </section>
 
@@ -819,7 +820,7 @@
               <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#fff" stroke-width="2"/><path d="M11 9l10 5-10 5V9z" fill="#fff"/></svg>
             </button>
           </div>
-          <span>Installation Guide</span>
+          <!-- <span>Installation Guide</span> -->
         </div>
 
         <div class="video-card">
@@ -829,7 +830,7 @@
               <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#fff" stroke-width="2"/><path d="M11 9l10 5-10 5V9z" fill="#fff"/></svg>
             </button>
           </div>
-          <span>Efficiency Test</span>
+          <!-- <span>Efficiency Test</span> -->
         </div>
 
         <div class="video-card">
@@ -839,7 +840,7 @@
               <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#fff" stroke-width="2"/><path d="M11 9l10 5-10 5V9z" fill="#fff"/></svg>
             </button>
           </div>
-          <span>Customer Review</span>
+          <!-- <span>Customer Review</span> -->
         </div>
 
         <div class="video-card">
@@ -849,7 +850,7 @@
               <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#fff" stroke-width="2"/><path d="M11 9l10 5-10 5V9z" fill="#fff"/></svg>
             </button>
           </div>
-          <span>Maintenance Tips</span>
+          <!-- <span>Maintenance Tips</span> -->
         </div>
 
       </div>
@@ -861,19 +862,19 @@
       <div class="gallery-row">
         <div class="gallery-item">
           <img src="image1.jpeg" alt="Commercial biomass stove" />
-          <div class="gallery-overlay"><span>Commercial Excellence</span></div>
+          <div class="gallery-overlay"><span></span></div>
         </div>
         <div class="gallery-item">
           <img src="image4.jpeg" alt="Heavy-duty stove" />
-          <div class="gallery-overlay"><span>Durable Construction</span></div>
+          <div class="gallery-overlay"><span></span></div>
         </div>
         <div class="gallery-item">
           <img src="image6.jpeg" alt="Hotel kitchen stove" />
-          <div class="gallery-overlay"><span>Efficient Operations</span></div>
+          <div class="gallery-overlay"><span></span></div>
         </div>
         <div class="gallery-item">
           <img src="image7.jpeg" alt="Manufacturing unit" />
-          <div class="gallery-overlay"><span>Precision Engineering</span></div>
+          <div class="gallery-overlay"><span></span></div>
         </div>
       </div>
     </div>
@@ -986,7 +987,8 @@
 <footer class="footer" id="contact">
   <div class="footer-inner">
     <div class="footer-col">
-      <div class="footer-brand">Kiruba Flame<br>Tech</div>
+       <img src="logo-bg.png" alt="Kiruba Flame Tech Logo" class="footer-logo" />
+      <!-- <div class="footer-brand">Kiruba Flame<br>Tech</div> -->
       <p class="footer-desc">Leading manufacturer of smart biomass and smokeless wood stoves in Tirunelveli, serving South India with sustainable energy solutions.</p>
     </div>
     <div class="footer-col">
