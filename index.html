@@ -618,7 +618,7 @@
     .hero { padding: 60px 32px 80px; flex-direction: column; gap: 48px; }
     .hero-image-bg { display: none; }
     .hero h1 { font-size: 36px; }
-    .products-section { padding: 50px 32px; }
+    .products-section { padding: 0px 30px; }
     .product-cards { flex-direction: column; }
     .videos-row { flex-wrap: wrap; }
     .video-card { min-width: calc(50% - 12px); }
@@ -650,8 +650,8 @@
       z-index: 99;
     }
     .nav.menu-open .nav-cta { display: inline-block; margin: 0 32px 16px; }
-    .gallery-row { flex-wrap: wrap; }
-    .gallery-item { min-width: calc(30% - 5px); }
+    .gallery-row { flex-wrap:wrap; }
+    .gallery-item { min-width: calc(30% - 5px);overflow: hidden; }
     .suitable-grid { gap: 20px; }
     .trust-stats { flex-direction: column; gap: 16px; }
     .hero-checklist { grid-template-columns: 1fr; }
@@ -662,7 +662,7 @@
   @media (max-width: 480px) {
     .hero h1 { font-size: 28px; }
     .hero-actions { flex-direction: column; align-items: flex-start; }
-    .gallery-item { min-width: 70%; }
+    .gallery-item { min-width: 70%;}
     .video-card { min-width: 100%; }
     .trust-main h2, .reviews-header h2, .section-header h2 { font-size: 24px; }
   }
