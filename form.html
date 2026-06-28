@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0d1117;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.contact-section{
+    padding:90px 0;
+}
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+@media(max-width:900px){
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+}
+
+.section-tag{
+    color:#39d353;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.contact-info h2{
+    color:#fff;
+    font-size:42px;
+    margin:15px 0;
+}
+
+.contact-info p{
+    color:#b6bcc8;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.info-item{
+    color:#fff;
+    margin-bottom:15px;
+    font-size:17px;
+}
+
+.contact-form{
+    background:#161b22;
+    border-radius:18px;
+    padding:35px;
+    border:1px solid rgba(57,211,83,.2);
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #30363d;
+    background:#0d1117;
+    color:#fff;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#39d353;
+    box-shadow:0 0 10px rgba(57,211,83,.3);
+}
+
+.contact-form textarea{
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#39d353;
+    color:#000;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+.submit-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+#status{
+    margin-top:18px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.success{
+    color:#39d353;
+}
+
+.error{
+    color:#ff5c5c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="contact-section">
+
+<div class="container">
+
+<div class="contact-wrapper">
+
+<div class="contact-info">
+
+<span class="section-tag">
+CONTACT US
+</span>
+
+<h2>
+Let's Build a Smarter Kitchen Together
+</h2>
+
+<p>
+Interested in our biomass stoves?
+Fill out the form and our team will contact you shortly.
+</p>
+
+<div class="info-item">
+📞 9597665055
+</div>
+
+<div class="info-item">
+✉️ kirubaflametech@gmail.com
+</div>
+
+<div class="info-item">
+📍 H61, NGO A Colony, 10th Cross Street,
+Palayamkottai, Tirunelveli
+</div>
+
+</div>
+
+<form id="contactForm" class="contact-form">
+
+<div class="form-group">
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+</div>
+
+<div class="form-group">
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+</div>
+
+<div class="form-group">
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+required>
+</div>
+
+<div class="form-group">
+<textarea
+name="message"
+rows="5"
+placeholder="Tell us about your requirement..."
+required></textarea>
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
+Send Enquiry
+</button>
+
+<p id="status"></p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const form=document.getElementById("contactForm");
+const status=document.getElementById("status");
+const submitBtn=document.getElementById("submitBtn");
+
+const WEBHOOK_URL="https://hook.eu1.make.com/fx3lsqj45m21492s3h82h8kjsw9f9om9";
+
+form.addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+    submitBtn.disabled=true;
+    submitBtn.innerHTML="Sending...";
+
+    status.className="";
+    status.innerHTML="";
+
+    const data=Object.fromEntries(new FormData(form).entries());
+
+    console.log("Sending Data:",data);
+
+    try{
+
+        const response=await fetch(WEBHOOK_URL,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
+        });
+
+        const result=await response.text();
+
+        console.log(result);
+
+        if(response.ok){
+
+            status.classList.add("success");
+            status.innerHTML="✅ Enquiry submitted successfully.";
+
+            form.reset();
+
+            setTimeout(function(){
+
+                window.location.href="https://kirubaflametech.com/";
+
+            },1500);
+
+        }else{
+
+            throw new Error(result);
+
+        }
+
+    }catch(err){
+
+        console.error(err);
+
+        status.classList.add("error");
+        status.innerHTML="❌ Submission failed. Please try again.";
+
+    }
+
+    submitBtn.disabled=false;
+    submitBtn.innerHTML="Send Enquiry";
+
+});
+
+</script>
+
+</body>
+</html>
